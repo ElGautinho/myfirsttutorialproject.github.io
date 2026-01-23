@@ -7,18 +7,17 @@
 } 
 
 body {
-
-
-  
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.4;
     color: burlywood;
     margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
   }
 
 body::before {
@@ -56,10 +55,17 @@ h1, p {
 }
 
 .header {
-  margin-top: -50px;
+    margin-top: 0;
     align-items: center;
     display: flex;
     flex-direction: column;
+    padding: 1rem;
+  }
+
+  .logo img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
   }
 
   .description {
@@ -96,16 +102,20 @@ label {
   
   .container {
     width: 100%;
-    margin: 3.125rem auto 0 auto;
+    max-width: 1200px;
+    margin: 1rem auto 0 auto;
+    padding: 0 1rem;
   }
 
   form {
-    padding: 1rem 2.25rem;
-    margin: 0px 350px 15px 350px;
+    padding: 1.5rem 1.5rem;
+    margin: 1rem auto 2rem auto;
+    max-width: 600px;
     border-radius: 2.25rem;
     border: 4px solid burlywood;
     background-color: black;
-    opacity: 65%;
+    opacity: 0.85;
+    width: 100%;
   }
    
   .form-group {
@@ -149,39 +159,100 @@ label {
   
   .submit-button {
     display: block;
-    width: 30%;
-    margin-left: 200px;
-    padding: 10px 0px 10px 0px;
+    width: 100%;
+    max-width: 250px;
+    margin: 1rem auto 0 auto;
+    padding: 12px 20px;
     background: rgb(138, 125, 14);
     color: rgb(82, 72, 29);
     border-radius: 5px;
     cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
   }
 
-:hover.submit-button{
+.submit-button:hover {
   background-color: rgb(212, 208, 171);
-  size: bold;
+  font-weight: bold;
 }
 
-  @media (max-width: 1020px) {
-    
-    form {
-      min-width: 400px;
-    }
-    .container {
-      flex-direction: column;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    
-    form {
-      min-width: 400px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-  form {
-    min-width: 400px;
-  }
+.submit-button:active {
+  transform: scale(0.98);
 }
+
+  /* Tablet and smaller desktops */
+  @media (max-width: 768px) {
+    form {
+      padding: 1.5rem 1rem;
+      margin: 1rem auto 2rem auto;
+    }
+    
+    label {
+      font-size: 1rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Mobile devices */
+  @media (max-width: 576px) {
+    body {
+      font-size: 0.95rem;
+    }
+    
+    form {
+      padding: 1.25rem 1rem;
+      margin: 0.5rem auto 1.5rem auto;
+      border-radius: 1.5rem;
+    }
+    
+    .form-group {
+      margin: 0 auto 1rem auto;
+    }
+    
+    .form-control {
+      height: 2.125rem;
+      padding: 0.5rem 0.625rem;
+      font-size: 1rem;
+    }
+    
+    label {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+    
+    p {
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+    }
+    
+    .submit-button {
+      width: 100%;
+      padding: 10px 15px;
+      font-size: 0.95rem;
+    }
+    
+    .input-textarea {
+      min-height: 100px;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Small mobile devices */
+  @media (max-width: 375px) {
+    form {
+      padding: 1rem 0.75rem;
+    }
+    
+    h1 {
+      font-size: 1.25rem;
+    }
+    
+    .description {
+      font-size: 0.875rem;
+    }
+  }
